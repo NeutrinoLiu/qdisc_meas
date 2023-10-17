@@ -1,0 +1,18 @@
+ENABLE AND DISABLE TCP_PROB:
+
+ENABLE
+# cd /sys/kernel/debug/tracing
+# echo 1 > events/tcp/tcp_probe/enable
+# cat trace
+
+DISABLE tracing:
+# echo 0 > events/tcp/tcp_probe/enable
+# echo > trace
+
+
+// -------------------
+
+RUN IPERF3
+iperf3 -c speedtestrh.telecom.mu -p 5201 --cport 5001
+
+
